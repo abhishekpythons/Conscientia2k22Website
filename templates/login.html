@@ -7,18 +7,22 @@
         <div class="loginposter">
             <img class="loginimage" src="/static/assets/img/login.png">
         </div>
+        <form action="/authenticate" method="post">
         <div class="form">
+        {% csrf_token %}
             <h1 class="headingh1">Login</h1>
             <p class="formp">Check out your account for latest updates!</p>
             <div class="formgroup">
-                <input type="text" id="email" class="forminput" autocomplete="off" placeholder="&#xf0e0">
-                <label for="email" class="formlabel">Email</label>
+                <input type="text" name="username" id="username" class="forminput" autocomplete="off" placeholder="&#xf0e0">
+                <label for="email" class="formlabel">username</label>
             </div>
             <div class="formgroup">
-                <input type="text" id="password" class="forminput" autocomplete="off" placeholder="&#xf084">
+                <input type="text" name="password" id="password" class="forminput" autocomplete="off" placeholder="&#xf084">
                 <label for="password" class="formlabel">Password</label>
             </div>
-            <span><a href="#"></a></span>
+            <!-- <span><a href="#"></a></span> -->
+            <span><input type="submit"></span>
         </div>
+        </form>
     </div>
 {% endblock %}

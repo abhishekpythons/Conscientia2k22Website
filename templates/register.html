@@ -8,21 +8,25 @@
             <img class="loginimage" src="/static/assets/img/register.png">
         </div>
         <div class="form">
+            <form action="/save" method="post">
+            {% csrf_token %}
             <h1 class="headingh1">Register</h1>
             <p class="formp">Register yourself for Conscientia 2k22 and participate in the various events and workshops.</p>
             <div class="formgroup">
-                <input type="text" id="name" class="forminput" autocomplete="off" placeholder="&#xf007">
+                <input type="text" name="name" id="name1" class="forminput" autocomplete="off" placeholder="&#xf007">
                 <label for="name" class="formlabel">Name</label>
             </div>
             <div class="formgroup">
-                <input type="text" id="email" class="forminput" autocomplete="off" placeholder="&#xf0e0">
+                <input type="text" name="email" id="email" class="forminput" autocomplete="off" placeholder="&#xf0e0">
                 <label for="email" class="formlabel">Email</label>
             </div>
             <div class="formgroup">
-                <input type="password" id="password" class="forminput" autocomplete="off" placeholder="&#xf084">
+                <input type="password" name="password" id="password" class="forminput" autocomplete="off" placeholder="&#xf084">
                 <label for="password" class="formlabel">Password</label>
             </div>
-            <span><a href="#"></a></span>
+            <span><input type="submit"></span>
+            <!-- <span><a type="submit"></a></span> -->
+        </form>
         </div>
     </div>
 {% endblock %}

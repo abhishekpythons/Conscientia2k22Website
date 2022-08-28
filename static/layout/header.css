@@ -623,8 +623,8 @@ span a{
   padding: 0.75rem 2rem;
   
 }
-span a:before,
-span a:after{
+span input:before,
+span input:after{
   position: absolute;
   content: "Proceed";
   height: 45px;
@@ -635,17 +635,17 @@ span a:after{
   box-sizing: border-box;
   border-radius: 5px;
 }
-span a:before{
+span input:before{
   color: #fff;
   background: var(--primary-light);
   transform: rotateY(0deg) translateZ(25px);
 }
-span a:after{
+span input:after{
   color: #fff;
   background-color: var(--primary);
   transform: rotateX(90deg) translateZ(25px);
 }
-span a:hover{
+span input:hover{
   transform: translateZ(-25px) rotateX(-90deg);
 }
 

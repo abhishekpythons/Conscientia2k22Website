@@ -15,6 +15,7 @@ import django_heroku
 import dj_database_url
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -81,9 +82,17 @@ WSGI_APPLICATION = 'conscientia2k22.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # },
+    'default' : {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mysql_db1',
+        'USER': 'ServerAlpha',
+        'PASSWORD': 'AlphaGo888',
+        'HOST': 'mysqlserver888.mysql.database.azure.com',
+        'PORT': '3306'
     }
 }
 
@@ -139,3 +148,11 @@ STATICFILES_DIRS = [
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 django_heroku.settings(locals())
+
+
+EMAIL_HOST = 'smtpout.secureserver.net'  #os.environ.get('EMAIL_HOST')
+EMAIL_HOST_USER = 'contact@conscientia.co.in' #os.environ.get('EMAIL_HOST_USER')
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = 'contact@conscientia.co.in'  #os.environ.get('EMAIL_HOST_USER')
+EMAIL_PORT = 465
+EMAIL_HOST_PASSWORD = 'conscientia2k22@iist$#'  #os.environ.get('EMAIL_HOST_PASSWORD')
